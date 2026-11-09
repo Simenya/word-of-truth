@@ -83,10 +83,10 @@
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 100px); align-items: center; }
   .split .h2 { margin-bottom: 26px; }
   .photo { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; background: var(--paper); }
-  .reach { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; border-top: 1px solid var(--line); }
-  .reach div { padding: 20px 12px 0 0; }
-  .reach strong { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
-  .reach span { font-size: .8rem; color: var(--muted); }
+  .reach { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .reach-line { font-family: var(--serif); font-size: clamp(1.6rem, 2.6vw, 2.1rem); font-weight: 500; font-style: italic; color: var(--ink); line-height: 1.25; margin-bottom: 12px; }
+  .reach-sub { color: var(--muted); font-size: .95rem; max-width: 52ch; }
+  .reach-sub span { display: block; margin-top: 10px; font-size: .74rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); }
 
   /* Vision */
   .vision { background: var(--paper); }
@@ -170,7 +170,6 @@
     body { font-size: 16px; }
     .grid3, .vlist { grid-template-columns: 1fr; }
     .dlist { columns: 1; }
-    .reach { grid-template-columns: 1fr 1fr; }
     .item { padding: 30px 24px 34px; }
     .details div { grid-template-columns: 1fr; gap: 4px; }
   }
@@ -227,10 +226,8 @@
       <h2 class="h2">A ministry built on the authority of Scripture</h2>
       <p class="lede">Word of Truth Ministries International is a non-profit, faith-based ministry established for the advancement of the Gospel of Jesus Christ. We believe the Holy Bible is the inspired Word of God and the supreme foundation for our faith, doctrine, conduct, ministry and mission.</p>
       <div class="reach">
-        <div><strong>Local</strong><span>Communities</span></div>
-        <div><strong>Uganda</strong><span>Nationwide</span></div>
-        <div><strong>Africa</strong><span>Across the continent</span></div>
-        <div><strong>Global</strong><span>International missions</span></div>
+        <p class="reach-line">From grassroots transformation to the ends of the earth.</p>
+        <p class="reach-sub">Changing lives in local communities, across Uganda and throughout Africa, and carrying the Gospel to the nations. <span>Acts 1:8</span></p>
       </div>
     </div>
     <img class="photo r" src="assets/who-we-are.jpg" alt="Members of the ministry gathered in a circle, studying the Bible together" loading="lazy">
