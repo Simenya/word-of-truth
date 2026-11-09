@@ -124,12 +124,6 @@
   .dlist li { break-inside: avoid; padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; }
   .dlist li span { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
 
-  /* Leadership */
-  .leader { background: var(--paper); }
-  .leader .photo { aspect-ratio: 1 / 1; }
-  .leader .name { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
-  .leader .name strong { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--ink); }
-  .leader .name span { font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
 
   /* Contact */
   .contact .split { align-items: start; }
@@ -164,7 +158,6 @@
     .vlist { grid-template-columns: repeat(2, 1fr); }
     .dlist { columns: 2; }
     .photo { aspect-ratio: 16 / 11; }
-    .leader .split > img { order: -1; }
     .toggle { display: block; z-index: 60; }
     .menu { position: fixed; inset: 0; background: var(--ink); color: var(--white); flex-direction: column; justify-content: center; gap: 30px; font-size: 1.15rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
     .menu.open { opacity: 1; pointer-events: auto; }
@@ -201,7 +194,6 @@
         <li><a href="#vision">Vision</a></li>
         <li><a href="#ministry">Ministry</a></li>
         <li><a href="#values">Values</a></li>
-        <li><a href="#leadership">Leadership</a></li>
         <li><a href="#contact" class="cta">Get in touch</a></li>
       </ul>
     </nav>
@@ -241,7 +233,7 @@
         <div><strong>Global</strong><span>International missions</span></div>
       </div>
     </div>
-    <img class="photo r" src="https://images.unsplash.com/photo-1729089049653-24312fdca908?fm=jpg&q=70&w=1400&auto=format&fit=crop" alt="A group of believers holding hands in prayer" loading="lazy">
+    <img class="photo r" src="assets/who-we-are.jpg" alt="Members of the ministry gathered in a circle, studying the Bible together" loading="lazy">
   </div>
 </section>
 
@@ -339,20 +331,6 @@
   </div>
 </section>
 
-<section class="leader" id="leadership">
-  <div class="wrap split">
-    <img class="photo r" src="https://images.unsplash.com/photo-1570134504733-502924fac82d?fm=jpg&q=70&w=1400&auto=format&fit=crop" alt="A worshipper with hands raised in a church sanctuary" loading="lazy">
-    <div class="r">
-      <span class="label">Founder &amp; vision bearer</span>
-      <h2 class="h2">Guarding the founding vision</h2>
-      <p class="lede">The Ministry is guided by spiritual and visionary leadership, with a commitment to doctrinal integrity, mentoring leaders and supporting church planting and missions.</p>
-      <div class="name">
-        <strong>Apostle Eddy Luguda</strong>
-        <span>Founder</span>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section class="contact" id="contact">
   <div class="wrap split">
@@ -411,7 +389,6 @@
       <h4>Connect</h4>
       <ul>
         <li><a href="#departments">Departments</a></li>
-        <li><a href="#leadership">Leadership</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
