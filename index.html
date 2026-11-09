@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Word of Truth Ministries International</title>
+<meta name="description" content="Word of Truth Ministries International is a Christian, non-profit, faith-based ministry raising a Christ-centred generation grounded in the Word of God.">
+<meta property="og:title" content="Word of Truth Ministries International">
+<meta property="og:description" content="Raising a Christ-centred generation grounded in the Word of God. 2 Timothy 2:15">
+<meta property="og:image" content="assets/logo.jpeg">
+<meta name="theme-color" content="#0b1f4b">
+<link rel="icon" href="assets/logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0b1f4b;
+    --text: #1c2333;
+    --muted: #5f6676;
+    --line: #e6e3dc;
+    --paper: #faf8f4;
+    --white: #ffffff;
+    --gold: #b8892b;
+    --serif: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --wrap: 1180px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  body { font-family: var(--sans); color: var(--text); background: var(--white); line-height: 1.7; font-size: 17px; -webkit-font-smoothing: antialiased; }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 500; color: var(--ink); line-height: 1.12; letter-spacing: -.01em; }
+
+  .wrap { width: min(var(--wrap), 90%); margin: 0 auto; }
+  section { padding: clamp(80px, 11vw, 140px) 0; }
+  .label { font-size: .74rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 20px; }
+  .h2 { font-size: clamp(2.2rem, 4.4vw, 3.4rem); max-width: 18ch; }
+  .lede { color: var(--muted); font-size: 1.08rem; max-width: 58ch; }
+
+  .btn { display: inline-block; padding: 15px 30px; font-size: .9rem; font-weight: 500; letter-spacing: .02em; border: 1px solid currentColor; transition: background .25s, color .25s, border-color .25s; }
+  .btn-solid { background: var(--white); color: var(--ink); border-color: var(--white); }
+  .btn-solid:hover { background: transparent; color: var(--white); }
+  .btn-line { color: var(--white); border-color: rgba(255,255,255,.5); }
+  .btn-line:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+  .btn-ink { background: var(--ink); color: var(--white); border-color: var(--ink); cursor: pointer; font-family: var(--sans); }
+  .btn-ink:hover { background: transparent; color: var(--ink); }
+
+  /* Header */
+  .site-header { position: fixed; inset: 0 0 auto 0; z-index: 40; color: var(--white); transition: background .3s, color .3s, border-color .3s; border-bottom: 1px solid transparent; }
+  .site-header.solid { background: rgba(255,255,255,.97); color: var(--ink); border-color: var(--line); backdrop-filter: blur(10px); }
+  .nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 42px; height: 42px; border-radius: 50%; background: var(--white); }
+  .brand-name { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; line-height: 1; }
+  .brand-name small { display: block; font-family: var(--sans); font-size: .6rem; font-weight: 500; letter-spacing: .22em; margin-top: 5px; opacity: .8; }
+  .menu { display: flex; align-items: center; gap: 34px; list-style: none; font-size: .88rem; }
+  .menu a { opacity: .85; transition: opacity .2s; }
+  .menu a:hover { opacity: 1; }
+  .menu .cta { opacity: 1; padding: 9px 20px; border: 1px solid currentColor; }
+  .toggle { display: none; background: none; border: 0; color: inherit; cursor: pointer; width: 32px; height: 32px; position: relative; }
+  .toggle span, .toggle span::before, .toggle span::after { position: absolute; left: 4px; right: 4px; height: 1.5px; background: currentColor; content: ""; transition: transform .3s, opacity .3s; }
+  .toggle span { top: 50%; }
+  .toggle span::before { top: -7px; left: 0; right: 0; }
+  .toggle span::after { top: 7px; left: 0; right: 0; }
+
+  /* Hero */
+  .hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: flex-end; color: var(--white); padding: 150px 0 clamp(70px, 10vw, 120px); overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: #0b1f4b url("https://images.unsplash.com/photo-1469228252629-cbe7cb7db2c8?fm=jpg&q=70&w=2400&auto=format&fit=crop") center 60% / cover no-repeat; }
+  .hero-bg::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,20,48,.55) 0%, rgba(8,20,48,.45) 40%, rgba(8,20,48,.88) 100%); }
+  .hero .wrap { position: relative; }
+  .hero .label { color: #e2c27d; }
+  .hero h1 { color: var(--white); font-size: clamp(3rem, 8vw, 6.4rem); max-width: 13ch; margin-bottom: 28px; }
+  .hero h1 em { font-style: italic; }
+  .hero p { font-size: clamp(1.05rem, 1.6vw, 1.2rem); max-width: 52ch; opacity: .9; margin-bottom: 40px; }
+  .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+  .hero-foot { margin-top: clamp(50px, 8vw, 90px); padding-top: 24px; border-top: 1px solid rgba(255,255,255,.22); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .85rem; opacity: .8; }
+  .hero-foot q { font-family: var(--serif); font-style: italic; font-size: 1.1rem; quotes: none; }
+
+  /* About */
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 100px); align-items: center; }
+  .split .h2 { margin-bottom: 26px; }
+  .photo { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; background: var(--paper); }
+  .reach { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 48px; border-top: 1px solid var(--line); }
+  .reach div { padding: 20px 12px 0 0; }
+  .reach strong { display: block; font-family: var(--serif); font-size: 1.35rem; font-weight: 600; color: var(--ink); line-height: 1.2; }
+  .reach span { font-size: .8rem; color: var(--muted); }
+
+  /* Vision */
+  .vision { background: var(--paper); }
+  .vm { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 90px); margin-top: 64px; }
+  .vm article { border-top: 1px solid var(--ink); padding-top: 28px; }
+  .vm h3 { font-size: 1.9rem; margin-bottom: 16px; }
+  .vm p { color: var(--muted); }
+
+  /* Verse */
+  .verse { position: relative; color: var(--white); text-align: center; padding: clamp(110px, 15vw, 190px) 0; overflow: hidden; }
+  .verse-bg { position: absolute; inset: 0; background: #0b1f4b url("https://images.unsplash.com/photo-1566392062329-9935b9a7c950?fm=jpg&q=70&w=2400&auto=format&fit=crop") center / cover no-repeat; }
+  .verse-bg::after { content: ""; position: absolute; inset: 0; background: rgba(8,20,48,.74); }
+  .verse .wrap { position: relative; }
+  .verse blockquote { font-family: var(--serif); font-size: clamp(1.7rem, 3.6vw, 2.8rem); line-height: 1.3; max-width: 30ch; margin: 0 auto; font-style: italic; }
+  .verse cite { display: block; margin-top: 30px; font-family: var(--sans); font-style: normal; font-size: .76rem; letter-spacing: .24em; color: #e2c27d; }
+
+  /* Objectives */
+  .head-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; flex-wrap: wrap; margin-bottom: 64px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .item { padding: 38px 34px 42px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s; }
+  .item:hover { background: var(--paper); }
+  .item .n { font-family: var(--serif); font-size: 1rem; color: var(--gold); display: block; margin-bottom: 26px; }
+  .item h3 { font-size: 1.6rem; margin-bottom: 10px; }
+  .item p { color: var(--muted); font-size: .95rem; }
+
+  /* Values */
+  .values { background: var(--ink); color: rgba(255,255,255,.75); }
+  .values .h2 { color: var(--white); }
+  .values .lede { color: rgba(255,255,255,.65); margin-top: 22px; }
+  .vlist { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0 40px; margin-top: 64px; }
+  .vlist li { padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,.14); font-family: var(--serif); font-size: 1.3rem; color: var(--white); }
+
+  /* Departments */
+  .dlist { list-style: none; columns: 3; column-gap: 60px; margin-top: 10px; }
+  .dlist li { break-inside: avoid; padding: 16px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; }
+  .dlist li span { color: var(--muted); font-size: .85rem; font-variant-numeric: tabular-nums; }
+
+  /* Leadership */
+  .leader { background: var(--paper); }
+  .leader .photo { aspect-ratio: 1 / 1; }
+  .leader .name { margin-top: 34px; padding-top: 22px; border-top: 1px solid var(--line); }
+  .leader .name strong { display: block; font-family: var(--serif); font-size: 1.7rem; font-weight: 600; color: var(--ink); }
+  .leader .name span { font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+
+  /* Contact */
+  .contact .split { align-items: start; }
+  .details { margin-top: 40px; display: grid; gap: 0; }
+  .details div { display: grid; grid-template-columns: 110px 1fr; padding: 18px 0; border-bottom: 1px solid var(--line); }
+  .details dt { font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+  .details dd { color: var(--ink); }
+  form { display: grid; gap: 26px; }
+  .field label { display: block; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .field input, .field textarea, .field select { width: 100%; border: 0; border-bottom: 1px solid #cfcbc2; background: transparent; padding: 10px 0; font: inherit; color: var(--ink); border-radius: 0; transition: border-color .2s; }
+  .field input:focus, .field textarea:focus, .field select:focus { outline: none; border-color: var(--ink); }
+  .field textarea { min-height: 120px; resize: vertical; }
+  form .btn { justify-self: start; }
+  .sent { font-size: .9rem; color: var(--gold); min-height: 1.4em; }
+
+  /* Footer */
+  footer { background: #071431; color: rgba(255,255,255,.6); padding: 80px 0 36px; font-size: .9rem; }
+  .fgrid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
+  footer .brand { color: var(--white); margin-bottom: 20px; }
+  footer h4 { color: var(--white); font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
+  footer ul { list-style: none; display: grid; gap: 10px; }
+  footer a:hover { color: var(--white); }
+  .fbase { margin-top: 70px; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: .8rem; }
+
+  /* Reveal */
+  .r { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+  .r.in { opacity: 1; transform: none; }
+
+  @media (max-width: 960px) {
+    .split, .vm, .fgrid { grid-template-columns: 1fr; }
+    .grid3 { grid-template-columns: 1fr 1fr; }
+    .vlist { grid-template-columns: repeat(2, 1fr); }
+    .dlist { columns: 2; }
+    .photo { aspect-ratio: 16 / 11; }
+    .leader .split > img { order: -1; }
+    .toggle { display: block; z-index: 60; }
+    .menu { position: fixed; inset: 0; background: var(--ink); color: var(--white); flex-direction: column; justify-content: center; gap: 30px; font-size: 1.15rem; opacity: 0; pointer-events: none; transition: opacity .3s; }
+    .menu.open { opacity: 1; pointer-events: auto; }
+    body.menu-open .site-header { color: var(--white); background: transparent; border-color: transparent; }
+    body.menu-open .toggle span { background: transparent; }
+    body.menu-open .toggle span::before { transform: translateY(7px) rotate(45deg); }
+    body.menu-open .toggle span::after { transform: translateY(-7px) rotate(-45deg); }
+  }
+  @media (max-width: 620px) {
+    body { font-size: 16px; }
+    .grid3, .vlist { grid-template-columns: 1fr; }
+    .dlist { columns: 1; }
+    .reach { grid-template-columns: 1fr 1fr; }
+    .item { padding: 30px 24px 34px; }
+    .details div { grid-template-columns: 1fr; gap: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .r { opacity: 1; transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header" id="header">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Word of Truth Ministries International, home">
+      <img src="assets/logo.jpeg" alt="">
+      <span class="brand-name">Word of Truth<small>MINISTRIES INTERNATIONAL</small></span>
+    </a>
+    <nav aria-label="Main">
+      <ul class="menu" id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#ministry">Ministry</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact" class="cta">Get in touch</a></li>
+      </ul>
+    </nav>
+    <button class="toggle" id="toggle" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span></button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-bg" role="img" aria-label="An open Bible resting on a table"></div>
+  <div class="wrap">
+    <span class="label">Christian &middot; Non-profit &middot; Faith-based</span>
+    <h1>Rightly dividing <em>the Word of Truth</em></h1>
+    <p>Raising a Christ-centred generation grounded in the Word of God, empowered by the Holy Spirit and equipped to transform society.</p>
+    <div class="actions">
+      <a href="#contact" class="btn btn-solid">Get involved</a>
+      <a href="#vision" class="btn btn-line">Our vision</a>
+    </div>
+    <div class="hero-foot">
+      <q>Be diligent to present yourself approved to God.</q>
+      <span>2 Timothy 2:15</span>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap split">
+    <div class="r">
+      <span class="label">Who we are</span>
+      <h2 class="h2">A ministry built on the authority of Scripture</h2>
+      <p class="lede">Word of Truth Ministries International is a non-profit, faith-based ministry established for the advancement of the Gospel of Jesus Christ. We believe the Holy Bible is the inspired Word of God and the supreme foundation for our faith, doctrine, conduct, ministry and mission.</p>
+      <div class="reach">
+        <div><strong>Local</strong><span>Communities</span></div>
+        <div><strong>Uganda</strong><span>Nationwide</span></div>
+        <div><strong>Africa</strong><span>Across the continent</span></div>
+        <div><strong>Global</strong><span>International missions</span></div>
+      </div>
+    </div>
+    <img class="photo r" src="https://images.unsplash.com/photo-1729089049653-24312fdca908?fm=jpg&q=70&w=1400&auto=format&fit=crop" alt="A group of believers holding hands in prayer" loading="lazy">
+  </div>
+</section>
+
+<section class="vision" id="vision">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">Vision &amp; mission</span>
+      <h2 class="h2">What we are working towards</h2>
+    </div>
+    <div class="vm">
+      <article class="r">
+        <h3>Our vision</h3>
+        <p>To raise a Christ-centred generation grounded in the Word of God, empowered by the Holy Spirit, committed to holy living, equipped for ministry and transformed to transform society.</p>
+      </article>
+      <article class="r">
+        <h3>Our mission</h3>
+        <p>To preach the Gospel of Jesus Christ, teach the uncompromised Word of God, make disciples, equip believers for ministry, develop godly leaders, win souls, strengthen families, support vulnerable people and communities, and advance the Kingdom of God locally, nationally and internationally.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="verse" aria-label="Scripture">
+  <div class="verse-bg"></div>
+  <div class="wrap r">
+    <blockquote>&ldquo;Be diligent to present yourself approved to God, a worker who does not need to be ashamed, rightly dividing the word of truth.&rdquo;</blockquote>
+    <cite>2 TIMOTHY 2:15</cite>
+  </div>
+</section>
+
+<section id="ministry">
+  <div class="wrap">
+    <div class="head-row r">
+      <div>
+        <span class="label">Our objectives</span>
+        <h2 class="h2">How we pursue our calling</h2>
+      </div>
+      <p class="lede" style="max-width:40ch">Nine areas of ministry that carry the Gospel from the pulpit into homes, communities and nations.</p>
+    </div>
+    <div class="grid3">
+      <div class="item r"><span class="n">01</span><h3>Evangelism</h3><p>Preaching the Gospel and calling people to repentance, faith and salvation in Jesus Christ.</p></div>
+      <div class="item r"><span class="n">02</span><h3>Discipleship</h3><p>Making disciples who understand Scripture, live by God's Word and reproduce faithful disciples.</p></div>
+      <div class="item r"><span class="n">03</span><h3>Bible Teaching</h3><p>Sound preaching, Bible studies, seminars, conferences and training.</p></div>
+      <div class="item r"><span class="n">04</span><h3>Prayer</h3><p>Promoting individual and corporate prayer, intercession and fasting.</p></div>
+      <div class="item r"><span class="n">05</span><h3>Leadership</h3><p>Identifying, mentoring and equipping faithful men and women for ministry.</p></div>
+      <div class="item r"><span class="n">06</span><h3>Missions</h3><p>Supporting missionary work, church planting and Gospel outreach locally and abroad.</p></div>
+      <div class="item r"><span class="n">07</span><h3>Youth &amp; Children</h3><p>Equipping young people and teaching children the Word in safe, Christ-centred settings.</p></div>
+      <div class="item r"><span class="n">08</span><h3>Family</h3><p>Strengthening marriages and families through teaching, counselling and fellowship.</p></div>
+      <div class="item r"><span class="n">09</span><h3>Community Outreach</h3><p>Demonstrating Christian love through humanitarian aid and support for vulnerable people.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="values" id="values">
+  <div class="wrap">
+    <div class="r">
+      <span class="label">Core values</span>
+      <h2 class="h2">The principles that guide us</h2>
+      <p class="lede">Every programme, leader and member is shaped by these commitments.</p>
+    </div>
+    <ul class="vlist r">
+      <li>Faith in God</li><li>Truth</li><li>Holiness</li><li>Love</li>
+      <li>Integrity</li><li>Prayer</li><li>Discipleship</li><li>Evangelism</li>
+      <li>Servant leadership</li><li>Excellence</li><li>Accountability</li><li>Unity</li>
+      <li>Compassion</li><li>Faithfulness</li><li>Stewardship</li><li>Human dignity</li>
+      <li>Justice &amp; righteousness</li>
+    </ul>
+  </div>
+</section>
+
+<section id="departments">
+  <div class="wrap">
+    <div class="head-row r">
+      <div>
+        <span class="label">Ministry departments</span>
+        <h2 class="h2">Serving through structured ministry</h2>
+      </div>
+      <p class="lede" style="max-width:40ch">There is a place for every believer to serve. Speak to us about joining a department.</p>
+    </div>
+    <ul class="dlist r">
+      <li>Pastoral Care <span>01</span></li>
+      <li>Evangelism &amp; Missions <span>02</span></li>
+      <li>Bible Study &amp; Discipleship <span>03</span></li>
+      <li>Prayer &amp; Intercession <span>04</span></li>
+      <li>Worship &amp; Music <span>05</span></li>
+      <li>Youth <span>06</span></li>
+      <li>Children <span>07</span></li>
+      <li>Men <span>08</span></li>
+      <li>Women <span>09</span></li>
+      <li>Media &amp; Communications <span>10</span></li>
+      <li>Welfare &amp; Community Outreach <span>11</span></li>
+      <li>Education &amp; Training <span>12</span></li>
+      <li>Legal &amp; Compliance <span>13</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="leader" id="leadership">
+  <div class="wrap split">
+    <img class="photo r" src="https://images.unsplash.com/photo-1570134504733-502924fac82d?fm=jpg&q=70&w=1400&auto=format&fit=crop" alt="A worshipper with hands raised in a church sanctuary" loading="lazy">
+    <div class="r">
+      <span class="label">Founder &amp; vision bearer</span>
+      <h2 class="h2">Guarding the founding vision</h2>
+      <p class="lede">The Ministry is guided by spiritual and visionary leadership, with a commitment to doctrinal integrity, mentoring leaders and supporting church planting and missions.</p>
+      <div class="name">
+        <strong>Apostle Eddy Luguda</strong>
+        <span>Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap split">
+    <div class="r">
+      <span class="label">Get in touch</span>
+      <h2 class="h2">Worship, serve or partner with us</h2>
+      <p class="lede">Whether you want to worship with us, serve in a department or support our missions, we would love to hear from you.</p>
+      <!-- Replace the bracketed details below with the ministry's confirmed contacts -->
+      <dl class="details">
+        <div><dt>Address</dt><dd>[Registered office address]</dd></div>
+        <div><dt>Email</dt><dd>[Email address]</dd></div>
+        <div><dt>Phone</dt><dd>[Phone number]</dd></div>
+      </dl>
+    </div>
+    <form class="r" id="contact-form">
+      <div class="field"><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" required></div>
+      <div class="field"><label for="f-email">Email</label><input id="f-email" type="email" autocomplete="email" required></div>
+      <div class="field">
+        <label for="f-topic">I would like to</label>
+        <select id="f-topic">
+          <option>Worship with you</option>
+          <option>Serve in a department</option>
+          <option>Partner or give</option>
+          <option>Request prayer</option>
+          <option>Ask a question</option>
+        </select>
+      </div>
+      <div class="field"><label for="f-msg">Message</label><textarea id="f-msg"></textarea></div>
+      <button class="btn btn-ink" type="submit">Send message</button>
+      <p class="sent" id="sent" role="status"></p>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap fgrid">
+    <div>
+      <a href="#home" class="brand">
+        <img src="assets/logo.jpeg" alt="">
+        <span class="brand-name">Word of Truth<small>MINISTRIES INTERNATIONAL</small></span>
+      </a>
+      <p style="max-width:36ch">Raising a Christ-centred generation, rightly dividing the Word of Truth.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#vision">Vision &amp; mission</a></li>
+        <li><a href="#ministry">Objectives</a></li>
+        <li><a href="#values">Core values</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <ul>
+        <li><a href="#departments">Departments</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap fbase">
+    <span>&copy; <span id="year"></span> Word of Truth Ministries International</span>
+    <span>2 Timothy 2:15</span>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('header');
+  const onScroll = () => header.classList.toggle('solid', window.scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const toggle = document.getElementById('toggle');
+  const menu = document.getElementById('menu');
+  const setMenu = (open) => {
+    menu.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    toggle.setAttribute('aria-expanded', open);
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  };
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.r').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.r').forEach((el) => el.classList.add('in'));
+  }
+
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    document.getElementById('sent').textContent = 'Thank you. We will be in touch soon.';
+    e.target.reset();
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
