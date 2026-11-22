@@ -74,6 +74,7 @@
   .hero .label { color: #e2c27d; }
   .hero h1 { color: var(--white); font-size: clamp(3rem, 8vw, 6.4rem); max-width: 13ch; margin-bottom: 28px; }
   .hero h1 em { font-style: italic; }
+  .hero h1 .hl { color: #ffc93c; font-weight: 700; }
   .hero p { font-size: clamp(1.05rem, 1.6vw, 1.2rem); max-width: 52ch; opacity: .9; margin-bottom: 40px; }
   .actions { display: flex; flex-wrap: wrap; gap: 14px; }
   .hero-foot { margin-top: clamp(50px, 8vw, 90px); padding-top: 24px; border-top: 1px solid rgba(255,255,255,.22); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; font-size: .85rem; opacity: .8; }
@@ -81,6 +82,8 @@
 
   /* About */
   .split { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 100px); align-items: center; }
+  .h2.one-line { max-width: none; }
+  @media (min-width: 700px) { .h2.one-line { white-space: nowrap; } }
   .split .h2 { margin-bottom: 26px; }
   .photo { aspect-ratio: 4 / 5; object-fit: cover; width: 100%; background: var(--paper); }
   .reach { margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
@@ -210,8 +213,7 @@
 <section class="hero" id="home">
   <div class="hero-bg" role="img" aria-label="An open Bible resting on a table"></div>
   <div class="wrap">
-    <span class="label">Christian &middot; Non-profit &middot; Faith-based</span>
-    <h1>Rightly dividing <em>the Word of Truth</em></h1>
+    <h1><span class="hl">Rightly</span> dividing <em>the Word of <span class="hl">Truth</span></em></h1>
     <p>Raising a Christ-centred generation grounded in the Word of God, empowered by the Holy Spirit and equipped to transform society.</p>
     <div class="actions">
       <a href="#contact" class="btn btn-solid">Get involved</a>
@@ -270,8 +272,7 @@
   <div class="wrap">
     <div class="head-row r">
       <div>
-        <span class="label">Our objectives</span>
-        <h2 class="h2">How we pursue our calling</h2>
+        <h2 class="h2 one-line">How we pursue our calling</h2>
       </div>
       <p class="lede" style="max-width:40ch">Three pillars that carry the Gospel from the pulpit into homes, communities and nations.</p>
     </div>
