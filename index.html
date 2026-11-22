@@ -133,6 +133,9 @@
   .details div { display: grid; grid-template-columns: 110px 1fr; padding: 18px 0; border-bottom: 1px solid var(--line); }
   .details dt { font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
   .details dd { color: var(--ink); }
+  .details .social { display: flex; flex-wrap: wrap; gap: 22px; }
+  .details .social a { border-bottom: 1px solid var(--line); transition: border-color .2s; }
+  .details .social a:hover { border-color: var(--ink); }
   form { display: grid; gap: 26px; }
   .field label { display: block; font-size: .76rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
   .field input, .field textarea, .field select { width: 100%; border: 0; border-bottom: 1px solid #cfcbc2; background: transparent; padding: 10px 0; font: inherit; color: var(--ink); border-radius: 0; transition: border-color .2s; }
@@ -143,7 +146,8 @@
 
   /* Footer */
   footer { background: #071431; color: rgba(255,255,255,.6); padding: 80px 0 36px; font-size: .9rem; }
-  .fgrid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; }
+  .fgrid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; }
+  footer .handle { margin-top: 14px; font-size: .8rem; opacity: .7; }
   footer .brand { color: var(--white); margin-bottom: 20px; }
   footer h4 { color: var(--white); font-size: .74rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; margin-bottom: 18px; }
   footer ul { list-style: none; display: grid; gap: 10px; }
@@ -362,6 +366,7 @@
         <div><dt>Address</dt><dd>[Registered office address]</dd></div>
         <div><dt>Email</dt><dd>[Email address]</dd></div>
         <div><dt>Phone</dt><dd>[Phone number]</dd></div>
+        <div><dt>Follow</dt><dd class="social"><a href="https://www.linkedin.com/company/word-of-truth-international/" target="_blank" rel="noopener" aria-label="Word of Truth on LinkedIn">LinkedIn</a><a href="https://www.facebook.com/wordoftruthinternational" target="_blank" rel="noopener" aria-label="Word of Truth on Facebook">Facebook</a><a href="https://www.instagram.com/wordoftruthinternational/" target="_blank" rel="noopener" aria-label="Word of Truth on Instagram (@wordoftruthinternational)">Instagram</a></dd></div>
       </dl>
     </div>
     <form class="r" id="contact-form">
@@ -410,6 +415,15 @@
         <li><a href="#departments">Departments</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+    </div>
+    <div>
+      <h4>Follow</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/company/word-of-truth-international/" target="_blank" rel="noopener" aria-label="Word of Truth on LinkedIn">LinkedIn</a></li>
+        <li><a href="https://www.facebook.com/wordoftruthinternational" target="_blank" rel="noopener" aria-label="Word of Truth on Facebook">Facebook</a></li>
+        <li><a href="https://www.instagram.com/wordoftruthinternational/" target="_blank" rel="noopener" aria-label="Word of Truth on Instagram">Instagram</a></li>
+      </ul>
+      <p class="handle">@wordoftruthinternational</p>
     </div>
   </div>
   <div class="wrap fbase">
